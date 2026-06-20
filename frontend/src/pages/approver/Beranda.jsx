@@ -121,7 +121,7 @@ export default function Beranda() {
                     <td className="bold">{item.score?.toFixed(4)}</td>
                     <td><span className={getRecBadgeClass(item.recommendation)}>{item.recommendation}</span></td>
                     <td>
-                      <button className="btn btn-primary btn-sm" onClick={() => navigate('/approver/persetujuan')}>
+                      <button className="btn btn-primary btn-sm" onClick={() => navigate('/approver/persetujuan', { state: { highlightId: item.leave_id } })}>
                         Buka Persetujuan
                       </button>
                     </td>

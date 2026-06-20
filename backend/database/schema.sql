@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS users (
 -- Leave requests table
 CREATE TABLE IF NOT EXISTS leave_requests (
     id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    user_id INT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
     jenis_cuti VARCHAR(50) NOT NULL,
     tanggal_mulai DATE NOT NULL,
     tanggal_selesai DATE NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS leave_requests (
     alamat_darurat TEXT,
     no_telepon VARCHAR(20),
     no_hp VARCHAR(20),
-    processed_by INT REFERENCES users(id),
+    processed_by INT REFERENCES users (id),
     processed_at TIMESTAMP,
     catatan TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -49,14 +49,17 @@ CREATE TABLE IF NOT EXISTS criteria (
     kode VARCHAR(10) UNIQUE NOT NULL,
     nama VARCHAR(100) NOT NULL,
     sumber_data TEXT,
-    bobot DECIMAL(5,2) NOT NULL DEFAULT 0,
+    bobot DECIMAL(5, 2) NOT NULL DEFAULT 0,
     tipe VARCHAR(10) NOT NULL DEFAULT 'benefit', -- 'cost' or 'benefit'
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Index for performance
-CREATE INDEX idx_leave_requests_user_id ON leave_requests(user_id);
-CREATE INDEX idx_leave_requests_status ON leave_requests(status);
-CREATE INDEX idx_users_role ON users(role);
-CREATE INDEX idx_users_employee_id ON users(employee_id);
+CREATE INDEX idx_leave_requests_user_id ON leave_requests (user_id);
+
+CREATE INDEX idx_leave_requests_status ON leave_requests (status);
+
+CREATE INDEX idx_users_role ON users (role);
+
+CREATE INDEX idx_users_employee_id ON users (employee_id);

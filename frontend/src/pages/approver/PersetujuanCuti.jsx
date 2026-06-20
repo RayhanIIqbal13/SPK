@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useLocation } from 'react-router-dom';
 import Header from '../../components/Header';
 import { useAuth } from '../../context/AuthContext';
 import { IconUser, IconCalendar, IconCheck, IconX, IconPhone } from '../../components/Icons';
@@ -9,6 +9,8 @@ import { getCutiBadgeClass, formatDateRange } from '../../utils/helpers';
 export default function PersetujuanCuti() {
   const { onMenuToggle } = useOutletContext();
   const { user } = useAuth();
+  const location = useLocation();
+  const highlightId = location.state?.highlightId;
   const [pending, setPending] = useState([]);
   const [loading, setLoading] = useState(true);
   const [processing, setProcessing] = useState(null);
@@ -22,6 +24,17 @@ export default function PersetujuanCuti() {
   };
 
   useEffect(() => { fetchPending(); }, []);
+
+  useEffect(() => {
+    if (highlightId && !loading && pending.length > 0) {
+      setTimeout(() => {
+        const el = document.getElementById(`leave-${highlightId}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+  }, [loading, highlightId, pending.length]);
 
   const showToast = (msg, type = 'success') => {
     setToast({ msg, type });
@@ -83,7 +96,7 @@ export default function PersetujuanCuti() {
           </div>
         ) : (
           pending.map(leave => (
-            <div className="leave-card" key={leave.id}>
+            <div className="leave-card" key={leave.id} id={`leave-${leave.id}`} style={highlightId === leave.id ? { border: '2px solid var(--primary)', boxShadow: '0 0 15px rgba(14, 165, 233, 0.4)' } : {}}>
               <div className="leave-card-header">
                 <div>
                   <div className="leave-card-employee">

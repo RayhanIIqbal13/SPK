@@ -123,7 +123,7 @@ export default function TableRanking() {
                           </div>
                         </td>
                         <td>
-                          <button className="btn btn-primary btn-sm" onClick={() => navigate('/approver/persetujuan')}>
+                          <button className="btn btn-primary btn-sm" onClick={() => navigate('/approver/persetujuan', { state: { highlightId: item.leave_id } })}>
                             Buka Persetujuan
                           </button>
                         </td>

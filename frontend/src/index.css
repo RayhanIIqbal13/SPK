@@ -100,7 +100,7 @@
   --border-color: #334155;
   --border-light: #1e293b;
   --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.5);
-  --sidebar-bg: linear-gradient(180deg, #1a3a30 0%, #0f2620 100%);
+  --sidebar-bg: linear-gradient(180deg, #1e293b 0%, #020617 100%);
   --sidebar-active: rgba(255, 255, 255, 0.1);
 }
 
@@ -160,17 +160,17 @@ input, select, textarea {
   z-index: 100;
   transition: transform var(--transition-normal);
   overflow-y: auto;
-  border-right: none;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  background: var(--sidebar-bg);
 }
 
 .sidebar-karyawan {
-  background: linear-gradient(180deg, #0d9488 0%, #115e59 100%);
-  border-right: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(180deg, #7c3aed 0%, #5b21b6 100%);
 }
 
-.sidebar-approver {
-  background: linear-gradient(180deg, #1e293b 0%, #020617 100%);
-  border-right: 1px solid rgba(255,255,255,0.05);
+[data-theme="dark"] .sidebar-karyawan {
+  background: var(--sidebar-bg);
 }
 
 .sidebar::-webkit-scrollbar {
@@ -652,11 +652,13 @@ input, select, textarea {
 
 /* Leave type badges */
 .badge-cuti {
+  display: inline-block;
   padding: 6px 14px;
   border-radius: var(--radius-full);
   font-size: 13px;
   font-weight: 600;
   border: none;
+  white-space: nowrap;
 }
 .badge-cuti-tahunan { background: var(--cuti-tahunan-bg); color: var(--cuti-tahunan); }
 .badge-cuti-melahirkan { background: var(--cuti-melahirkan-bg); color: var(--cuti-melahirkan); }
@@ -665,11 +667,11 @@ input, select, textarea {
 .badge-cuti-panjang { background: var(--cuti-panjang-bg); color: var(--cuti-panjang); }
 
 /* SPK type badges */
-.badge-cost { background: var(--spk-cost-bg); color: var(--spk-cost); padding: 4px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; }
-.badge-benefit { background: var(--spk-benefit-bg); color: var(--spk-benefit); padding: 4px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; }
+.badge-cost { display: inline-block; white-space: nowrap; background: var(--spk-cost-bg); color: var(--spk-cost); padding: 4px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; }
+.badge-benefit { display: inline-block; white-space: nowrap; background: var(--spk-benefit-bg); color: var(--spk-benefit); padding: 4px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; }
 
 /* Recommendation badges */
-.badge-rec { padding: 6px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 600; }
+.badge-rec { display: inline-block; white-space: nowrap; padding: 6px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 600; }
 .badge-rec-approve { background: var(--rec-approve-bg); color: var(--rec-approve); }
 .badge-rec-priority { background: var(--rec-priority-bg); color: var(--rec-priority); }
 .badge-rec-normal { background: var(--rec-normal-bg); color: var(--rec-normal); }

@@ -122,11 +122,7 @@ export default function KriteriaBobot() {
                         <td style={{ fontWeight: 600 }}>{c.kode}</td>
                         <td>{c.nama}</td>
                         <td>
-                          <span style={{ 
-                            display: 'inline-flex', alignItems: 'center', gap: 6,
-                            padding: '4px 10px', borderRadius: 6, fontSize: 12.5,
-                            background: 'var(--bg-hover)', fontWeight: 500
-                          }}>
+                          <span style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5, display: 'block' }}>
                             {getSumberLabel(c.sumber_data)}
                           </span>
                         </td>
