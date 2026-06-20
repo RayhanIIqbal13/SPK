@@ -891,7 +891,6 @@ input, select, textarea {
 /* ===== Info Box ===== */
 .info-box {
   background: var(--bg-hover);
-  border-left: 4px solid var(--accent-blue);
   border-radius: var(--radius-md);
   padding: 20px;
   margin-bottom: 32px;

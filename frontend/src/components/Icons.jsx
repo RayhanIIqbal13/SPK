@@ -251,3 +251,11 @@ export const IconEyeOff = ({ size = 20, ...props }) => (
     <line x1="1" y1="1" x2="23" y2="23" />
   </svg>
 );
+
+// Sparkles / AI / Magic
+export const IconSparkles = ({ size = 20, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z" />
+    <path d="M5 3l1 2 2 1-2 1-1 2-1-2-2-1 2-1z" />
+  </svg>
+);
