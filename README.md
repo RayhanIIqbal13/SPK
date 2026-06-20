@@ -94,3 +94,4 @@ Aplikasi didesain untuk kenyamanan maksimal di kondisi minim cahaya.
 
 ---
 *Dibuat untuk mempermudah alur birokrasi cuti perusahaan dan membantu manajemen mengambil keputusan persetujuan secara cepat, tepat, dan objektif.*
+  
