@@ -16,6 +16,48 @@ Sistem Informasi Manajemen Cuti Karyawan yang modern dan responsif, terintegrasi
 - **Database**: PostgreSQL
 - **Koneksi**: RESTful API (`fetch` API)
 
+## 🛠️ Panduan Instalasi & Menjalankan Aplikasi
+
+Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal di komputermu:
+
+### 1. Persiapan Database (PostgreSQL)
+- Pastikan kamu sudah menginstal PostgreSQL.
+- Buat sebuah database baru, misalnya dengan nama `portal_cuti`.
+- Eksekusi *query* yang ada di dalam folder `backend/database/schema.sql` untuk membuat seluruh tabel.
+- Eksekusi *query* di `backend/database/seed.sql` untuk memasukkan data awal (akun Admin/Karyawan, Kriteria SPK, dll).
+
+### 2. Setup Backend (Server API)
+Buka terminal baru dan jalankan perintah berikut:
+```bash
+cd backend
+npm install
+```
+Buat file `.env` di dalam folder `backend` dengan konfigurasi seperti berikut (sesuaikan dengan kredensial database-mu):
+```env
+PORT=3000
+DB_USER=postgres
+DB_PASSWORD=password_kamu
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=portal_cuti
+```
+Jalankan server backend:
+```bash
+npm start
+```
+*Backend akan berjalan di `http://localhost:3000`*
+
+### 3. Setup Frontend (Aplikasi Web)
+Buka tab terminal baru (biarkan terminal backend tetap menyala) dan jalankan:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+*Frontend akan berjalan di `http://localhost:5173`*. Buka tautan tersebut di browsermu.
+
+---
+
 ## 📸 Screenshots Aplikasi
 
 ### 1. Halaman Autentikasi
